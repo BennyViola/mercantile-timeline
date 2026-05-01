@@ -4,6 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blockhouse vs. DelightMore – Timeline</title>
+  <script>
+    const correctPassword = "bhdmcase";
+    const userPassword = prompt("Enter password to access this page:");
+    if (userPassword !== correctPassword) {
+      document.body.innerHTML = "<div style='display: flex; align-items: center; justify-content: center; height: 100vh; background: #030712; color: #e5e7eb; font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; text-align: center;'><div><h1 style='font-size: 2rem; margin-bottom: 1rem;'>Access Denied</h1><p style='font-size: 1rem; color: #9ca3af;'>Incorrect password. Please try again.</p></div></div>";
+      document.title = "Access Denied";
+    }
+  </script>
   <style>
     :root {
       --bg: #050814;

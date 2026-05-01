@@ -292,7 +292,8 @@
       .bottom-search-input { font-size: 0.95rem; min-height: 44px; }
       .bottom-search-clear { min-height: 44px; padding-inline: 0.9rem; }
       .scroll-date-pill { width: 100%; }
-      .bottom-search-wrap { border-radius: 22px; padding: 0.68rem 0.75rem 0.6rem 0.82rem; }
+      .dock-toggle-button { width: 100%; }
+      .bottom-search-wrap { border-radius: 22px; padding: 0.68rem 0.75rem 0.6rem 0.75rem; }
     }
   
     .nav-chip.active { background: rgba(255,255,255,0.12); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.14); }
@@ -349,6 +350,21 @@
       box-shadow: 0 18px 42px rgba(2,6,23,0.34);
       backdrop-filter: blur(14px);
     }
+    .dock-toggle-button {
+      flex: 0 0 auto;
+      height: 48px;
+      padding: 0 1rem;
+      color: #f3f4f6;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      cursor: pointer;
+      transition: background 0.18s ease, border-color 0.18s ease, transform 0.12s ease;
+    }
+    .dock-toggle-button:hover,
+    .dock-toggle-button[aria-pressed="true"] {
+      background: linear-gradient(180deg, rgba(236,72,153,0.18), rgba(236,72,153,0.11));
+      border-color: rgba(236,72,153,0.3);
+    }
     .bottom-search-wrap {
       display: flex;
       flex-direction: column;
@@ -356,8 +372,9 @@
       gap: 0.22rem;
       flex: 1 1 560px;
       min-width: min(100%, 360px);
-      padding: 0.58rem 0.7rem 0.55rem 0.9rem;
+      padding: 0.58rem 0.7rem 0.55rem 0.7rem;
     }
+    .bottom-search-wrap.is-hidden { display: none; }
     .bottom-search-row {
       display: flex;
       align-items: center;
@@ -1409,16 +1426,17 @@
 
     <div class="bottom-date-bar">
     <div class="bottom-date-inner">
-      <div class="bottom-search-wrap dock-pill">
+      <button id="dockToggleButton" type="button" class="dock-toggle-button dock-pill" aria-pressed="false" aria-controls="dockSearchPanel" aria-label="Open search">Search</button>
+      <div class="scroll-date-pill dock-pill" id="dockDatePill">
+        <div class="scroll-date-label">Current timeline date</div>
+        <div class="scroll-date-value" id="scrollDateValue">May 22, 2024</div>
+      </div>
+      <div class="bottom-search-wrap dock-pill is-hidden" id="dockSearchPanel">
         <div class="bottom-search-row">
-          <input id="timelineSearchInput" type="search" placeholder="Search names, events, dates, quotes, or keywords" aria-label="Search" class="bottom-search-input" />
+          <input id="timelineSearchInput" type="search" placeholder="Search events, names, or keywords" aria-label="Search" class="bottom-search-input" />
           <button id="timelineSearchClear" type="button" class="bottom-search-clear">Clear</button>
         </div>
         <div id="timelineSearchCount" class="bottom-search-count"></div>
-      </div>
-      <div class="scroll-date-pill dock-pill">
-        <div class="scroll-date-label">Current timeline date</div>
-        <div class="scroll-date-value" id="scrollDateValue">May 22, 2024</div>
       </div>
     </div>
   </div>
@@ -1465,8 +1483,26 @@
   const searchInput = document.getElementById('timelineSearchInput');
   const clearButton = document.getElementById('timelineSearchClear');
   const searchCount = document.getElementById('timelineSearchCount');
+  const dockToggleButton = document.getElementById('dockToggleButton');
+  const dockDatePill = document.getElementById('dockDatePill');
+  const dockSearchPanel = document.getElementById('dockSearchPanel');
   let activeFilter = 'all';
   let activeSearch = '';
+
+
+  function setSearchMode(isSearchOpen) {
+    if (dockToggleButton) dockToggleButton.setAttribute('aria-pressed', isSearchOpen ? 'true' : 'false');
+    if (dockToggleButton) dockToggleButton.textContent = isSearchOpen ? 'Close' : 'Search';
+    if (dockDatePill) dockDatePill.style.display = isSearchOpen ? 'none' : '';
+    if (dockSearchPanel) dockSearchPanel.classList.toggle('is-hidden', !isSearchOpen);
+    if (isSearchOpen && searchInput) {
+      setTimeout(function () { searchInput.focus(); }, 30);
+    }
+    if (!isSearchOpen && searchInput && !searchInput.value.trim()) {
+      activeSearch = '';
+      applyVisibility();
+    }
+  }
 
   function getEventDateText(event) {
     const el = event.querySelector('.event-date');
@@ -1551,6 +1587,13 @@
     });
   }
 
+  if (dockToggleButton) {
+    dockToggleButton.addEventListener('click', function () {
+      const isOpen = dockToggleButton.getAttribute('aria-pressed') === 'true';
+      setSearchMode(!isOpen);
+    });
+  }
+
   let ticking = false;
   function onScrollish() {
     if (ticking) return;
@@ -1565,6 +1608,7 @@
   window.addEventListener('resize', onScrollish);
   if (timeline) timeline.addEventListener('scroll', onScrollish, { passive: true });
 
+  setSearchMode(false);
   if (!gate || gate.style.display === 'none') { applyVisibility(); }
   else { updateSearchCount(); }
   setTimeout(updateCurrentDate, 50);

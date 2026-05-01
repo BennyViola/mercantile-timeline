@@ -283,6 +283,16 @@
       .brand { display: block; }
       main { padding-inline: 1rem; }
       .event-card { padding-inline: 0.75rem; }
+      .nav-chips { gap: 0.55rem; padding-top: 0.25rem; padding-bottom: 0.3rem; justify-content: flex-start; }
+      .nav-chip { font-size: 0.9rem; padding: 0.58rem 0.95rem; min-height: 44px; border-width: 1px; }
+      .nav-chip::before { width: 10px; height: 10px; }
+      .bottom-date-inner { align-items: stretch; gap: 0.65rem; }
+      .bottom-search-wrap { flex-basis: 100%; }
+      .bottom-search-row { gap: 0.45rem; }
+      .bottom-search-input { font-size: 0.95rem; min-height: 44px; }
+      .bottom-search-clear { min-height: 44px; padding-inline: 0.9rem; }
+      .scroll-date-pill { width: 100%; }
+      .bottom-search-wrap { border-radius: 22px; padding: 0.68rem 0.75rem 0.6rem 0.82rem; }
     }
   
     .nav-chip.active { background: rgba(255,255,255,0.12); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.14); }
@@ -294,7 +304,7 @@
       right: 0;
       bottom: 0;
       z-index: 38;
-      pointer-events: none;
+      pointer-events: auto;
       padding: 0.85rem 1rem calc(0.85rem + env(safe-area-inset-bottom, 0px));
       background: linear-gradient(to top, rgba(15,23,42,0.96), rgba(15,23,42,0.84), transparent);
       border-top: 1px solid rgba(51,65,85,0.7);
@@ -306,6 +316,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      gap: 0.85rem;
+      flex-wrap: wrap;
     }
     .scroll-date-pill {
       min-width: 220px;
@@ -330,6 +342,74 @@
       color: #f3f4f6;
       font-weight: 600;
     }
+    .dock-pill {
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(15,23,42,0.94), rgba(15,23,42,0.82));
+      border: 1px solid rgba(148,163,184,0.24);
+      box-shadow: 0 18px 42px rgba(2,6,23,0.34);
+      backdrop-filter: blur(14px);
+    }
+    .bottom-search-wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.22rem;
+      flex: 1 1 560px;
+      min-width: min(100%, 360px);
+      padding: 0.58rem 0.7rem 0.55rem 0.9rem;
+    }
+    .bottom-search-row {
+      display: flex;
+      align-items: center;
+      gap: 0.48rem;
+      min-height: 44px;
+    }
+    .bottom-search-input {
+      flex: 1 1 auto;
+      min-width: 0;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.16);
+      background: rgba(2,6,23,0.34);
+      color: #f8fafc;
+      padding: 0 1rem;
+      font-size: 0.94rem;
+      outline: none;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+    }
+    .bottom-search-input::placeholder { color: #94a3b8; }
+    .bottom-search-input:focus {
+      border-color: rgba(236,72,153,0.48);
+      box-shadow: 0 0 0 3px rgba(236,72,153,0.12), inset 0 1px 0 rgba(255,255,255,0.03);
+    }
+    .bottom-search-clear {
+      flex: 0 0 auto;
+      height: 44px;
+      padding: 0 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.16);
+      background: rgba(2,6,23,0.34);
+      color: #f3f4f6;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.18s ease, border-color 0.18s ease, transform 0.12s ease;
+    }
+    .bottom-search-clear:hover {
+      background: rgba(30,41,59,0.72);
+      border-color: rgba(148,163,184,0.28);
+      transform: translateY(-1px);
+    }
+    .bottom-search-count {
+      font-size: 0.76rem;
+      color: #9ca3af;
+      min-height: 0.95rem;
+      text-align: center;
+    }
+    .scroll-date-pill {
+      min-width: 280px;
+      padding: 0.62rem 1.05rem 0.58rem;
+    }
+
 
     .password-gate {
       position: fixed;
@@ -448,6 +528,7 @@
   <main>
     <section class="hero">
       <p class="hero-kicker">Chronological narrative</p>
+      
       <div class="legend">
         <div class="lane-pill"><span class="lane-swatch" style="background: var(--lane-contract);"></span>Contract / Term</div>
         <div class="lane-pill"><span class="lane-swatch" style="background: var(--lane-money);"></span>Money / Payment</div>
@@ -462,6 +543,27 @@
     <section id="master-chronology" class="timeline-section">
       <div class="year-label">2024–2026 – Master Chronology</div>
       <div class="timeline" id="masterTimeline">
+
+<article class="event" data-tags="contract ip deliverable">
+          <div class="event-node node-contract"></div>
+          <div class="event-card">
+            <div class="event-header">
+              <div class="event-date">May 22, 2024</div>
+              <h2 class="event-title">DelightMore first encounters Blockhouse at Epson booth and pivots away from prior partner path</h2>
+            </div>
+            <div class="chips-row">
+              <span class="chip lane-contract"><span class="chip-dot"></span>Origin story</span>
+              <span class="chip lane-ip"><span class="chip-dot"></span>Technical differentiator</span>
+              <span class="chip lane-deliverable"><span class="chip-dot"></span>Creative demo</span>
+            </div>
+            <div class="event-body">
+              DelightMore leadership, including Bobby and Michael, meets Blockhouse at Epson's booth and sees Blockhouse demonstrate how a streamlined Apple Silicon and MadMapper workflow can drive the full booth experience. The demonstration stands out because it delivers a clean, powerful result with less complexity and lower cost than traditional media-server approaches, while also showing Blockhouse's unusual ability to combine technical execution with creative design. After that meeting, DelightMore moves away from the earlier Brave Berlin path and begins pursuing Blockhouse as the preferred partner.
+            </div>
+            <div class="quotes">
+              <p class="quote-line">Key points preserved: Epson booth demo, Apple Silicon + MadMapper pipeline, simplicity, cost savings versus normal media servers, and the pivot away from Brave Berlin after meeting Blockhouse.</p>
+            </div>
+          </div>
+        </article>
 
 <article class="event" data-tags="contract ip">
           <div class="event-node node-contract"></div>
@@ -1305,11 +1407,18 @@
   </main>
   </div>
 
-    <div class="bottom-date-bar" aria-hidden="true">
+    <div class="bottom-date-bar">
     <div class="bottom-date-inner">
-      <div class="scroll-date-pill">
+      <div class="bottom-search-wrap dock-pill">
+        <div class="bottom-search-row">
+          <input id="timelineSearchInput" type="search" placeholder="Search names, events, dates, quotes, or keywords" aria-label="Search" class="bottom-search-input" />
+          <button id="timelineSearchClear" type="button" class="bottom-search-clear">Clear</button>
+        </div>
+        <div id="timelineSearchCount" class="bottom-search-count"></div>
+      </div>
+      <div class="scroll-date-pill dock-pill">
         <div class="scroll-date-label">Current timeline date</div>
-        <div class="scroll-date-value" id="scrollDateValue">July 23, 2024</div>
+        <div class="scroll-date-value" id="scrollDateValue">May 22, 2024</div>
       </div>
     </div>
   </div>
@@ -1336,6 +1445,8 @@
       if (value === PASSWORD) {
         if (error) error.textContent = '';
         unlockApp();
+        applyVisibility();
+        setTimeout(updateCurrentDate, 60);
       } else {
         if (error) error.textContent = 'Incorrect password.';
         if (input) {
@@ -1344,13 +1455,18 @@
         }
       }
     });
-    setTimeout(() => { if (!unlocked && input) input.focus(); }, 60);
+    setTimeout(function () { if (!unlocked && input) input.focus(); }, 60);
   }
 
-  const filterButtons = Array.from(document.querySelectorAll('.nav-chip'));
+  const filterButtons = Array.from(document.querySelectorAll('.nav-chip[data-filter]'));
   const events = Array.from(document.querySelectorAll('#masterTimeline .event'));
   const dateValue = document.getElementById('scrollDateValue');
   const timeline = document.getElementById('masterTimeline');
+  const searchInput = document.getElementById('timelineSearchInput');
+  const clearButton = document.getElementById('timelineSearchClear');
+  const searchCount = document.getElementById('timelineSearchCount');
+  let activeFilter = 'all';
+  let activeSearch = '';
 
   function getEventDateText(event) {
     const el = event.querySelector('.event-date');
@@ -1358,16 +1474,36 @@
   }
 
   function getVisibleEvents() {
-    return events.filter(event => !event.classList.contains('is-hidden'));
+    return events.filter(function (event) { return !event.classList.contains('is-hidden'); });
   }
 
-  function applyFilter(filter) {
-    filterButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.filter === filter));
-    events.forEach(event => {
-      const tags = (event.dataset.tags || '').split(/\s+/).filter(Boolean);
-      const show = filter === 'all' || tags.includes(filter);
-      event.classList.toggle('is-hidden', !show);
+  function eventMatchesSearch(event, query) {
+    if (!query) return true;
+    const haystack = (event.innerText || event.textContent || '').toLowerCase();
+    return haystack.indexOf(query) !== -1;
+  }
+
+  function updateSearchCount() {
+    if (!searchCount) return;
+    if (!activeSearch) {
+      searchCount.textContent = '';
+      return;
+    }
+    const count = getVisibleEvents().length;
+    searchCount.textContent = count === 1 ? '1 matching event' : count + ' matching events';
+  }
+
+  function applyVisibility() {
+    filterButtons.forEach(function (btn) {
+      btn.classList.toggle('active', btn.dataset.filter === activeFilter);
     });
+    events.forEach(function (event) {
+      const tags = (event.dataset.tags || '').split(/\s+/).filter(Boolean);
+      const filterMatch = activeFilter === 'all' || tags.indexOf(activeFilter) !== -1;
+      const searchMatch = eventMatchesSearch(event, activeSearch);
+      event.classList.toggle('is-hidden', !(filterMatch && searchMatch));
+    });
+    updateSearchCount();
     updateCurrentDate();
   }
 
@@ -1380,7 +1516,7 @@
     const viewportMid = window.innerHeight * 0.38;
     let bestEvent = visible[0];
     let bestDistance = Infinity;
-    visible.forEach(event => {
+    visible.forEach(function (event) {
       const rect = event.getBoundingClientRect();
       const anchor = rect.top + Math.min(rect.height * 0.35, 120);
       const distance = Math.abs(anchor - viewportMid);
@@ -1392,13 +1528,34 @@
     if (dateValue) dateValue.textContent = getEventDateText(bestEvent) || 'Timeline';
   }
 
-  filterButtons.forEach(btn => btn.addEventListener('click', () => applyFilter(btn.dataset.filter || 'all')));
+  filterButtons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      activeFilter = btn.dataset.filter || 'all';
+      applyVisibility();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', function () {
+      activeSearch = searchInput.value.trim().toLowerCase();
+      applyVisibility();
+    });
+  }
+
+  if (clearButton) {
+    clearButton.addEventListener('click', function () {
+      if (searchInput) searchInput.value = '';
+      activeSearch = '';
+      applyVisibility();
+      if (searchInput) searchInput.focus();
+    });
+  }
 
   let ticking = false;
   function onScrollish() {
     if (ticking) return;
     ticking = true;
-    requestAnimationFrame(() => {
+    requestAnimationFrame(function () {
       updateCurrentDate();
       ticking = false;
     });
@@ -1408,7 +1565,8 @@
   window.addEventListener('resize', onScrollish);
   if (timeline) timeline.addEventListener('scroll', onScrollish, { passive: true });
 
-  applyFilter('all');
+  if (!gate || gate.style.display === 'none') { applyVisibility(); }
+  else { updateSearchCount(); }
   setTimeout(updateCurrentDate, 50);
 })();
 </script>

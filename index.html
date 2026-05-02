@@ -250,6 +250,61 @@
     }
     .quote-line { margin-bottom: 0.25rem; }
 
+    /* Collapsible exhibit letter */
+    .exhibit-letter {
+      margin-top: 0.65rem;
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      background: rgba(15, 23, 42, 0.55);
+      overflow: hidden;
+    }
+    .exhibit-letter > summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.78rem;
+      color: #cbd5e1;
+      background: rgba(59, 130, 246, 0.08);
+      border-bottom: 1px solid transparent;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background 0.15s ease;
+      user-select: none;
+    }
+    .exhibit-letter > summary::-webkit-details-marker { display: none; }
+    .exhibit-letter > summary:hover { background: rgba(59, 130, 246, 0.16); }
+    .exhibit-letter[open] > summary { border-bottom-color: var(--border-subtle); }
+    .exhibit-letter > summary::before {
+      content: "\25B6";
+      font-size: 0.65rem;
+      color: #60a5fa;
+      transition: transform 0.2s ease;
+      display: inline-block;
+    }
+    .exhibit-letter[open] > summary::before { transform: rotate(90deg); }
+    .exhibit-letter .summary-label { font-weight: 500; color: #e5e7eb; }
+    .exhibit-letter .summary-meta { color: #94a3b8; font-size: 0.72rem; }
+    .exhibit-body {
+      padding: 0.85rem 0.95rem 0.95rem;
+      font-size: 0.78rem;
+      color: #cbd5e1;
+      line-height: 1.55;
+      font-family: ui-serif, Georgia, "Times New Roman", serif;
+    }
+    .exhibit-body .letter-meta {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.7rem;
+      color: #94a3b8;
+      border-bottom: 1px dashed var(--border-subtle);
+      padding-bottom: 0.55rem;
+      margin-bottom: 0.7rem;
+      line-height: 1.5;
+    }
+    .exhibit-body .letter-meta strong { color: #e5e7eb; font-weight: 500; }
+    .exhibit-body p { margin: 0 0 0.65rem; }
+    .exhibit-body .letter-signoff { margin-top: 0.9rem; color: #e5e7eb; }
+
     .lane-contract { background: rgba(34,197,94,0.12); border-color: rgba(34,197,94,0.6); }
     .lane-contract .chip-dot, .node-contract { background: var(--lane-contract); }
     .lane-money { background: rgba(248,113,113,0.11); border-color: rgba(248,113,113,0.6); }
@@ -1003,17 +1058,37 @@
           <div class="event-node node-litigation"></div>
           <div class="event-card">
             <div class="event-header">
-              <div class="event-date">Sept–Oct 2025</div>
-              <h2 class="event-title">Key leaders depart amid frustration with Michael</h2>
+              <div class="event-date">Sept 2025</div>
+              <h2 class="event-title">CIO Bobby Woolwine departs under “suspicious circumstances”</h2>
             </div>
             <div class="chips-row">
-              <span class="chip lane-litigation"><span class="chip-dot"></span>Context</span>
+              <span class="chip lane-litigation"><span class="chip-dot"></span>Departures</span>
+              <span class="chip lane-contract"><span class="chip-dot"></span>Partnership architect</span>
             </div>
             <div class="event-body">
-              Multiple senior figures, including CIO Bobby and CFO Nick, exit while expressing concerns about Michael’s management, foreshadowing later interference in the BH partnership.
+              Bobby Woolwine — the DelightMore CIO who personally framed the partnership as a “germinating entertainment enterprise,” granted Blockhouse “full access” to DM venues, and architected the original investor-facing pitch — leaves DM under what Blockhouse describes as suspicious circumstances. His departure removes the executive who had been the public face of the BH/DM relationship and is a direct precondition for the operational and legal turn that follows.
             </div>
             <div class="quotes">
               <p class="quote-line">“We witnessed a number of DelightMore and Mercantile Immersive employees quit under Michael Forgus’s management – or, leave under suspicious circumstances in the case of Bobby Woolwine (Sep 2025).”</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="event" data-tags="litigation money">
+          <div class="event-node node-litigation"></div>
+          <div class="event-card">
+            <div class="event-header">
+              <div class="event-date">Oct 2025</div>
+              <h2 class="event-title">CFO Nick Brumbaugh resigns; voices frustration with Michael at in-person partner meeting BH attended</h2>
+            </div>
+            <div class="chips-row">
+              <span class="chip lane-litigation"><span class="chip-dot"></span>Departures</span>
+              <span class="chip lane-money"><span class="chip-dot"></span>Witnessed conduct</span>
+            </div>
+            <div class="event-body">
+              DelightMore CFO Nick Brumbaugh quits in October 2025. At an in-person partner meeting that Blockhouse personnel attended, Brumbaugh verbally expresses frustrations with Michael’s management. Because BH personnel were present, this is firsthand witnessed conduct of a senior DM officer voicing concerns about Michael — not hearsay — and it directly contradicts any narrative that Michael’s decisions enjoyed clean internal support.
+            </div>
+            <div class="quotes">
               <p class="quote-line">“DelightMore CFO, Nick Brumbaugh, quits Oct 2025, verbally expressing frustrations with Michael at an in-person partner meeting (which BH was present at).”</p>
             </div>
           </div>
@@ -1167,17 +1242,39 @@
           <div class="event-card">
             <div class="event-header">
               <div class="event-date">Dec 2025</div>
-              <h2 class="event-title">First Mercantile AV Director quits over Michael issues</h2>
+              <h2 class="event-title">Lucas Goodman resignation emails — documentary record of internal frustration with Michael, copied to BH</h2>
             </div>
             <div class="chips-row">
-              <span class="chip lane-litigation"><span class="chip-dot"></span>Context</span>
+              <span class="chip lane-litigation"><span class="chip-dot"></span>Documentary evidence</span>
+              <span class="chip lane-access"><span class="chip-dot"></span>Departures</span>
             </div>
             <div class="event-body">
-              AV Director Lucas Goodman leaves, copying BH on emails describing frustrations with Michael’s management of the venue.
+              Lucas Goodman — the first Mercantile Immersive AV Director — resigns in December 2025 and sends emails describing his frustrations with Michael’s management. Critically, Lucas copies Blockhouse on the correspondence. These emails are not hearsay or after-the-fact characterization — they are contemporaneous documentary exhibits authored by a senior DM/Mercantile employee at the moment of his resignation, preserved in BH’s inbox by virtue of the cc, and available to be called by name as evidence.
             </div>
             <div class="quotes">
               <p class="quote-line">“The first Mercantile Immersive AV Director, Lucas Goodman, quits Dec 2025, expressing frustrations with Michael via email, on which Lucas copied BH.”</p>
             </div>
+            <details class="exhibit-letter">
+              <summary>
+                <span class="summary-label">Read full resignation letter</span>
+                <span class="summary-meta">— Dec 8, 2025 · Lucas Goodman → DM/MI team, cc: BH</span>
+              </summary>
+              <div class="exhibit-body">
+                <div class="letter-meta">
+                  <strong>From:</strong> Lucas Goodman &lt;lucas@delightmore.com&gt;<br>
+                  <strong>To:</strong> Don Vonderhaar, Jerin Dunham, Josh Hardymon, Laura Randall, Lauren Weatherall, Kevin Winkler, Michael Forgus<br>
+                  <strong>Date:</strong> Mon, Dec 8, 2025 at 11:56 AM<br>
+                  <strong>Subject:</strong> Lucas Goodman Resignation Letter
+                </div>
+                <p>Delightmore and Mercantile Immersive Team,</p>
+                <p>I am writing to inform you of my resignation from my positions with Delightmore and Mercantile Immersive. This message should serve as my two weeks notice with my last day of working being 12/19/25.</p>
+                <p>It is regrettable that I am resigning from my work with Delightmore very shortly after agreeing to join the Mercantile Immersive Technical team. While the opportunity at Mercantile is alluring for many reasons, I felt immense pressure from management to take this position even though I wasn’t sure it was the right thing for me professionally. I also felt that responsibilities from my current role as venue operations manager were being continually and increasingly taken out of my hands. Even after voicing both of these concerns, the pressure continued to increase, and others continued to work around me in my current responsibilities to the point that I truly felt I had no choice but to accept the position I was being forced into. Though it was not expressly said to me, it felt very clear to me that my only role with Delightmore or Mercantile Immersive moving forward was to take this position I was still unsure of. I was in an environment that was spiritually, emotionally, and mentally draining and toxic to my wellbeing. I hoped that by accepting a change in responsibilities and shifting to Mercantile Immersive only that the working environment may improve.</p>
+                <p>As I have shifted my focus exclusively towards Mercantile Immersive, I have become increasingly concerned with the way in which I have been managed. After taking a leap of faith, I have had my salary threatened, my job description changed, and my autonomy stripped. Prior to making this change I expressed fears of losing autonomy and being micromanaged and to this point my fears have become reality. It has become clear to me that the working environment is not one that is any better than the environment I was trying to escape in the first place.</p>
+                <p>As I have spent time in reflection and reviewed my employment opportunities I have decided to remove myself from this hostile work environment altogether.</p>
+                <p>I am grateful for the opportunities Delightmore has provided me.</p>
+                <p class="letter-signoff">Sincerely,<br>Lucas Goodman</p>
+              </div>
+            </details>
           </div>
         </article>
 
@@ -1186,14 +1283,15 @@
           <div class="event-card">
             <div class="event-header">
               <div class="event-date">January 9, 2026</div>
-              <h3 class="event-title">Security-camera transcript captures Harris Media activity and file-copying references</h3>
+              <h3 class="event-title">Harris Media’s first documented post-friction visit — control-room access and on-site copying references</h3>
             </div>
             <div class="chips-row">
               <span class="chip lane-access"><span class="chip-dot"></span>Control room</span>
               <span class="chip lane-ip"><span class="chip-dot"></span>Copying</span>
+              <span class="chip lane-litigation"><span class="chip-dot"></span>Pre-break presence</span>
             </div>
             <div class="event-body">
-              The cleaned January 9 security-camera transcript records Harris Media personnel touring sensitive spaces, discussing technical choices, and referencing copying activity during the visit, followed by control-room handling and hard-drive discussion.
+              This is the first documented Harris Media presence at the Mercantile after the BH/DM relationship has begun to deteriorate — weeks before the formal dissolution and two months before the March copying admission. The cleaned January 9 security-camera transcript records Harris personnel touring sensitive spaces, discussing technical choices, and referencing copying activity during the visit, followed by control-room handling and hard-drive discussion. The chronology matters: Harris is on-site, in BH-built control rooms, before the formal break — which directly connects to the March 10 file-copy/reverse-engineering event and to Michael’s March 12 admission that “we copied your file.”
             </div>
             <div class="quotes">
               <p class="quote-line">“Client Events is copying - it's about 56 gigs, about 20 minutes.”</p>
@@ -1317,23 +1415,46 @@
           </div>
         </article>
 
-        <article class="event" data-tags="ip litigation">
+        <article class="event" data-tags="ip litigation deliverable">
           <div class="event-node node-ip"></div>
           <div class="event-card">
             <div class="event-header">
               <div class="event-date">Feb 12, 2026</div>
-              <h2 class="event-title">Final content delivered; admissions of outside vendors & sharing invoices</h2>
+              <h2 class="event-title">Final content delivered; Michael admits undisclosed outside vendors in the control room</h2>
             </div>
             <div class="chips-row">
-              <span class="chip lane-ip"><span class="chip-dot"></span>IP / NDA</span>
-              <span class="chip lane-litigation"><span class="chip-dot"></span>Admission</span>
+              <span class="chip lane-deliverable"><span class="chip-dot"></span>Final delivery</span>
+              <span class="chip lane-access"><span class="chip-dot"></span>Control-room access</span>
+              <span class="chip lane-ip"><span class="chip-dot"></span>NDA breach</span>
             </div>
             <div class="event-body">
-              At the final content demo and follow‑up meeting with counsel, Michael admits he brought in other vendors and shared BH invoices, conduct characterized as direct SPA/NDA violations.
+              Blockhouse delivers the remaining content library scenes per the agreement, demonstrated in person to DM and counsel. In the same session, Michael admits he engaged other vendors and brought them into the BH-built control room without disclosing it to Blockhouse — conduct characterized as a direct SPA/NDA violation. The performance side of the case is closed here: BH was delivering at the same moment DM is admitting it had been routing third parties through the protected environment.
             </div>
             <div class="quotes">
               <p class="quote-line">“On Feb 12, Blockhouse delivered the remaining content library scenes as was previously agreed upon. An in person demonstration of the final scenes took place.”</p>
-              <p class="quote-line">Michael “admits that he engaged other vendors and brought them into the control room without disclosing it to Blockhouse. He also admitted to sharing Blockhouse invoices with an external party (Hudepohl). Both actions are direct violations of the SPA and NDA.”</p>
+              <p class="quote-line">Michael “admits that he engaged other vendors and brought them into the control room without disclosing it to Blockhouse… a direct violation of the SPA and NDA.”</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="event" data-tags="ip litigation money">
+          <div class="event-node node-ip"></div>
+          <div class="event-card">
+            <div class="event-header">
+              <div class="event-date">Feb 12, 2026</div>
+              <h2 class="event-title">Michael admits sharing Blockhouse invoices with Hudepohl — standalone NDA breach</h2>
+            </div>
+            <div class="chips-row">
+              <span class="chip lane-ip"><span class="chip-dot"></span>NDA breach</span>
+              <span class="chip lane-money"><span class="chip-dot"></span>Pricing disclosure</span>
+              <span class="chip lane-litigation"><span class="chip-dot"></span>Admission</span>
+            </div>
+            <div class="event-body">
+              In the same Feb 12 session, Michael separately admits to sharing Blockhouse invoices with Hudepohl, an external party. This is a distinct NDA breach from the undisclosed-vendor admission and deserves its own evidentiary footing: the NDA expressly protects “quotes, prices… trade secrets” (Jul 23, 2024 NDA) and Blockhouse’s pricing was deliberately set below market — disclosing those numbers to a third party hands a competitor pricing intelligence that BH never authorized. Treat this as its own count, not a footnote to the vendor admission.
+            </div>
+            <div class="quotes">
+              <p class="quote-line">Michael “admitted to sharing Blockhouse invoices with an external party (Hudepohl). [This is] a direct violation of the SPA and NDA.”</p>
+              <p class="quote-line">NDA scope (Jul 23, 2024): “Confidential information may include, but is not limited to, quotes, prices, pre-production concepts, trade secrets…”</p>
             </div>
           </div>
         </article>

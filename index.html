@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blockhouse vs. DelightMore – Timeline</title>
+  <title>BLOCKHOUSE VS DELIGHTMORE – Timeline</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #050814;
@@ -29,7 +32,7 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { height: 100%; }
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
       background: #030712;
       color: var(--text);
       line-height: 1.6;
@@ -37,7 +40,7 @@
       overflow-x: hidden;
     }
     a { color: inherit; text-decoration: none; }
-    main { max-width: 1180px; margin: 0 auto; padding: 8.9rem 2rem 7rem; }
+    main { max-width: 1180px; margin: 0 auto; padding: 8.9rem 2rem 4rem; }
 
     /* Top nav */
     .top-bar {
@@ -55,6 +58,7 @@
       display: block;
     }
     .brand {
+      font-family: 'Inter', system-ui, sans-serif;
       font-size: clamp(1.35rem, 2.4vw, 2.05rem);
       font-weight: 650;
       letter-spacing: 0.05em;
@@ -125,6 +129,9 @@
       margin-bottom: 0.3rem;
     }
     .hero-title {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-weight: 400;
+      letter-spacing: 0.01em;
       font-size: clamp(1.9rem, 2.4vw, 2.4rem);
       font-weight: 600;
       letter-spacing: 0.02em;
@@ -194,12 +201,16 @@
       margin-bottom: 0.35rem;
     }
     .event-date {
-      font-size: 0.8rem;
-      color: var(--muted);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.78rem;
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
+      color: #d7dee8;
     }
     .event-title {
+      font-family: 'Inter', system-ui, sans-serif;
       font-size: 0.98rem;
       font-weight: 500;
     }
@@ -279,25 +290,11 @@
     }
 
     @media (max-width: 640px) {
-      .top-inner { padding-inline: 1rem; gap: 0.75rem; }
-      .brand { display: block; }
-      main { padding-inline: 1rem; }
-      .event-card { padding-inline: 0.75rem; }
-      .nav-chips { gap: 0.55rem; padding-top: 0.25rem; padding-bottom: 0.3rem; justify-content: flex-start; }
-      .nav-chip { font-size: 0.9rem; padding: 0.58rem 0.95rem; min-height: 44px; border-width: 1px; }
+      .nav-chips { justify-content: flex-start; gap: 0.55rem; padding-block: 0.3rem; }
+      .nav-chip { font-size: 0.96rem; padding: 0.72rem 1rem; min-height: 46px; }
       .nav-chip::before { width: 10px; height: 10px; }
-      .bottom-date-inner { align-items: stretch; gap: 0.65rem; }
-      .bottom-search-wrap { flex-basis: 100%; }
-      .bottom-search-row { gap: 0.45rem; }
-      .bottom-search-input { font-size: 0.95rem; min-height: 44px; }
-      .bottom-search-clear { min-height: 44px; padding-inline: 0.9rem; }
-      .scroll-date-pill { width: 100%; }
-      .dock-toggle-button { width: 100%; }
-      .bottom-search-wrap { border-radius: 22px; padding: 0.68rem 0.75rem 0.6rem 0.75rem; }
     }
-  
-    .nav-chip.active { background: rgba(255,255,255,0.12); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.14); }
-    .event.is-hidden { display: none; }
+
 
     .bottom-date-bar {
       position: fixed;
@@ -305,7 +302,7 @@
       right: 0;
       bottom: 0;
       z-index: 38;
-      pointer-events: auto;
+      pointer-events: none;
       padding: 0.85rem 1rem calc(0.85rem + env(safe-area-inset-bottom, 0px));
       background: linear-gradient(to top, rgba(15,23,42,0.96), rgba(15,23,42,0.84), transparent);
       border-top: 1px solid rgba(51,65,85,0.7);
@@ -317,227 +314,371 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 0.85rem;
-      flex-wrap: wrap;
     }
     .scroll-date-pill {
-      min-width: 220px;
-      text-align: center;
-      padding: 0.5rem 1rem;
+      position: relative;
+      width: min(760px, calc(100vw - 24px));
+      height: 54px;
+      padding: 0 10px;
       border-radius: 999px;
-      background: rgba(15,23,42,0.88);
+      background: rgba(15,23,42,0.92);
       border: 1px solid rgba(148,163,184,0.25);
       box-shadow: 0 18px 40px rgba(2,6,23,0.35);
+      pointer-events: auto;
+      overflow: hidden;
     }
-    .scroll-date-label {
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: #94a3b8;
-      margin-bottom: 0.18rem;
-    }
-    .scroll-date-value {
-      font-size: 0.95rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #f3f4f6;
-      font-weight: 600;
-    }
-    .dock-pill {
-      border-radius: 999px;
-      background: linear-gradient(180deg, rgba(15,23,42,0.94), rgba(15,23,42,0.82));
-      border: 1px solid rgba(148,163,184,0.24);
-      box-shadow: 0 18px 42px rgba(2,6,23,0.34);
-      backdrop-filter: blur(14px);
-    }
-    .dock-toggle-button {
-      flex: 0 0 auto;
-      height: 48px;
-      padding: 0 1rem;
-      color: #f3f4f6;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-      cursor: pointer;
-      transition: background 0.18s ease, border-color 0.18s ease, transform 0.12s ease;
-    }
-    .dock-toggle-button:hover,
-    .dock-toggle-button[aria-pressed="true"] {
-      background: linear-gradient(180deg, rgba(236,72,153,0.18), rgba(236,72,153,0.11));
-      border-color: rgba(236,72,153,0.3);
-    }
-    .bottom-search-wrap {
+    .pill-center {
+      position: absolute;
+      inset: 0;
       display: flex;
       flex-direction: column;
+      align-items: center;
       justify-content: center;
-      gap: 0.22rem;
-      flex: 1 1 560px;
-      min-width: min(100%, 360px);
-      padding: 0.58rem 0.7rem 0.55rem 0.7rem;
+      text-align: center;
+      transition: opacity 140ms ease;
+      pointer-events: none;
     }
-    .bottom-search-wrap.is-hidden { display: none; }
-    .bottom-search-row {
+    .pill-center.is-hidden {
+      opacity: 0;
+    }
+    .pill-row {
+      position: relative;
+      z-index: 1;
+      height: 100%;
       display: flex;
       align-items: center;
-      gap: 0.48rem;
-      min-height: 44px;
+      justify-content: flex-start;
     }
-    .bottom-search-input {
-      flex: 1 1 auto;
+    .pill-left {
+      display: flex;
+      align-items: center;
+      min-width: 42px;
+      transition: width 180ms ease, max-width 180ms ease, flex 180ms ease;
+    }
+    .pill-left.is-open {
+      width: 100%;
+      max-width: 100%;
+    }
+    .pill-search-toggle {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(5, 8, 20, 0.88);
+      color: var(--text);
+      overflow: hidden;
+      flex: 0 0 42px;
+    }
+    .pill-search-toggle svg {
+      position: absolute;
+      transition: opacity 160ms ease, transform 160ms ease;
+    }
+    .pill-search-toggle .icon-search {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+    .pill-search-toggle .icon-close {
+      opacity: 0;
+      transform: scale(0.8) rotate(-90deg);
+    }
+    .pill-search-toggle.is-active .icon-search {
+      opacity: 0;
+      transform: scale(0.8) rotate(90deg);
+    }
+    .pill-search-toggle.is-active .icon-close {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+    .pill-search-shell {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: calc(100% - 52px);
+      margin-left: 10px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(5, 8, 20, 0.88);
+      border-radius: 999px;
+      padding: 0 12px;
+      height: 42px;
+    }
+    .pill-search-shell.is-hidden { display: none; }
+    .pill-search-shell input {
+      flex: 1;
       min-width: 0;
-      height: 44px;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.16);
-      background: rgba(2,6,23,0.34);
-      color: #f8fafc;
-      padding: 0 1rem;
-      font-size: 0.94rem;
+      background: transparent;
+      border: 0;
       outline: none;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+      color: var(--text);
+      font: inherit;
     }
-    .bottom-search-input::placeholder { color: #94a3b8; }
-    .bottom-search-input:focus {
-      border-color: rgba(236,72,153,0.48);
-      box-shadow: 0 0 0 3px rgba(236,72,153,0.12), inset 0 1px 0 rgba(255,255,255,0.03);
+    .pill-search-shell input::placeholder { color: var(--muted); }
+    @media (max-width: 640px) {
+      .bottom-date-bar { padding: 0.65rem 0.75rem calc(0.85rem + env(safe-area-inset-bottom, 0px)); }
+      .scroll-date-pill { width: calc(100vw - 24px); height: 52px; }
+      .pill-search-toggle { width: 40px; height: 40px; flex-basis: 40px; }
+      .pill-search-shell { width: calc(100% - 48px); height: 40px; margin-left: 8px; }
+      .scroll-date-label { letter-spacing: 0.12em; }
+      .scroll-date-value {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.78rem;
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #f8fafc;
     }
-    .bottom-search-clear {
-      flex: 0 0 auto;
-      height: 44px;
-      padding: 0 1rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.16);
-      background: rgba(2,6,23,0.34);
-      color: #f3f4f6;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.18s ease, border-color 0.18s ease, transform 0.12s ease;
-    }
-    .bottom-search-clear:hover {
-      background: rgba(30,41,59,0.72);
-      border-color: rgba(148,163,184,0.28);
-      transform: translateY(-1px);
-    }
-    .bottom-search-count {
-      font-size: 0.76rem;
-      color: #9ca3af;
-      min-height: 0.95rem;
-      text-align: center;
-    }
-    .scroll-date-pill {
-      min-width: 280px;
-      padding: 0.62rem 1.05rem 0.58rem;
     }
 
 
     .password-gate {
       position: fixed;
       inset: 0;
-      z-index: 100;
+      z-index: 120;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1.5rem;
-      background: radial-gradient(circle at top, rgba(236,72,153,0.12), transparent 30%), rgba(3,7,18,0.97);
-      backdrop-filter: blur(10px);
+      padding: 24px;
+      background: rgba(3,6,18,0.78);
+      backdrop-filter: blur(18px);
     }
+    .password-gate.is-hidden { display: none; }
+    .event.is-hidden { display: none; }
     .password-card {
       width: min(460px, 100%);
-      background: linear-gradient(180deg, rgba(11,18,32,0.98), rgba(10,16,30,0.98));
-      border: 1px solid rgba(148,163,184,0.28);
-      border-radius: 18px;
-      box-shadow: 0 25px 60px rgba(2,6,23,0.55);
-      padding: 1.35rem;
+      border: 1px solid var(--border-subtle);
+      background: linear-gradient(180deg, rgba(9,14,31,0.97), rgba(7,10,22,0.97));
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: 0 24px 70px rgba(0,0,0,0.42);
     }
     .password-kicker {
-      font-size: 0.72rem;
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--muted);
-      margin-bottom: 0.45rem;
+      margin-bottom: 12px;
+      font-weight: 700;
+    
+      text-align: center;
     }
     .password-title {
-      font-size: 1.35rem;
-      font-weight: 650;
-      margin-bottom: 0.45rem;
-      color: #f3f4f6;
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(1.7rem, 2vw, 2.2rem);
+      line-height: 1.05;
+      margin-bottom: 0.55rem;
+      color: #f8fafc;
+      max-width: none;
+      text-wrap: balance;
+      text-align: center;
     }
     .password-copy {
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin-bottom: 1rem;
+      max-width: 32ch;
+      color: #b6c2d1;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
     }
-    .password-row {
-      display: flex;
-      gap: 0.65rem;
-      flex-wrap: wrap;
+    .password-form {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
     }
     .password-input {
-      flex: 1 1 220px;
       min-width: 0;
-      background: rgba(15,23,42,0.92);
-      border: 1px solid rgba(71,85,105,0.85);
-      border-radius: 12px;
-      color: #f3f4f6;
-      padding: 0.8rem 0.95rem;
-      font-size: 0.98rem;
+      height: 48px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text);
+      border-radius: 14px;
+      padding: 0 14px;
+      font: inherit;
       outline: none;
     }
-    .password-input:focus {
-      border-color: rgba(236,72,153,0.9);
-      box-shadow: 0 0 0 3px rgba(236,72,153,0.15);
-    }
     .password-button {
-      flex: 0 0 auto;
-      border: 1px solid rgba(236,72,153,0.55);
-      background: rgba(236,72,153,0.16);
-      color: #fce7f3;
-      border-radius: 12px;
-      padding: 0.8rem 1rem;
-      font-size: 0.92rem;
-      font-weight: 600;
+      height: 48px;
+      border: 1px solid rgba(34,197,94,0.35);
+      background: rgba(34,197,94,0.14);
+      color: var(--text);
+      border-radius: 14px;
+      padding: 0 18px;
+      font-weight: 700;
       cursor: pointer;
     }
-    .password-button:hover { background: rgba(236,72,153,0.24); }
     .password-error {
-      min-height: 1.1rem;
-      margin-top: 0.75rem;
-      color: #fda4af;
-      font-size: 0.84rem;
+      min-height: 1.25rem;
+      margin-top: 10px;
+      color: #fca5a5;
+      font-size: 0.92rem;
     }
-    .app-shell.is-locked {
-      visibility: hidden;
+    body.is-locked { overflow: hidden; }
+    @media (max-width: 640px) {
+      .password-form { grid-template-columns: 1fr; }
+      .password-button, .password-input { width: 100%; }
     }
+
+
+    .event-date {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #cbd5e1;
+    }
+    .scroll-date-label {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.66rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #94a3b8;
+      margin-bottom: 0.12rem;
+    }
+    .scroll-date-value {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 1.02rem;
+      font-style: italic;
+      letter-spacing: 0.02em;
+      text-transform: none;
+      color: #f8fafc;
+      line-height: 1.05;
+    }
+    .password-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(148,163,184,0.22);
+      background:
+        radial-gradient(circle at top right, rgba(236,72,153,0.11), transparent 32%),
+        radial-gradient(circle at bottom left, rgba(34,197,94,0.09), transparent 28%),
+        linear-gradient(180deg, rgba(9,14,31,0.98), rgba(7,10,22,0.98));
+    }
+    .password-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), transparent 22%);
+      pointer-events: none;
+    }
+    .password-kicker {
+      color: #86efac;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+    }
+    .password-title {
+      max-width: 10ch;
+      text-wrap: balance;
+    }
+    .password-copy {
+      max-width: 32ch;
+      color: #b6c2d1;
+    }
+    .password-form {
+      position: relative;
+      z-index: 1;
+    }
+    .password-input {
+      background: rgba(2, 6, 23, 0.88);
+      border-color: rgba(148,163,184,0.22);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+    }
+    .password-button {
+      background: linear-gradient(180deg, rgba(34,197,94,0.18), rgba(34,197,94,0.1));
+      border-color: rgba(134,239,172,0.3);
+    }
+
+
+    .scroll-date-value {
+      font-family: 'Inter', system-ui, sans-serif !important;
+      font-size: 0.78rem !important;
+      font-style: normal !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.14em !important;
+      text-transform: uppercase !important;
+      color: #f8fafc !important;
+      line-height: 1.05 !important;
+    }
+
+
+    .password-card {
+      width: min(500px, 100%);
+      padding: 30px 30px 26px;
+      text-align: center;
+    }
+    .password-kicker {
+      margin-bottom: 10px;
+    }
+    .password-title {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.98rem;
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #f8fafc;
+      line-height: 1.25;
+      margin: 0 auto 0.9rem;
+      max-width: 24ch;
+    }
+    .password-copy {
+      max-width: 34ch;
+      margin: 0 auto 1.15rem;
+      line-height: 1.55;
+    }
+    .password-form {
+      width: 100%;
+      align-items: stretch;
+      margin: 0 auto;
+    }
+    .password-error {
+      text-align: center;
+      margin-top: 12px;
+    }
+    @media (max-width: 640px) {
+      .password-card { padding: 24px 20px 20px; }
+      .password-title { font-size: 0.9rem; letter-spacing: 0.16em; }
+    }
+
+
+    .playbook-section { margin-top: 80px; }
+    .playbook-section .year-label { color: var(--text); }
+    .playbook-intro { color: var(--muted); font-size: 14px; max-width: 720px; margin: 4px 0 24px; line-height: 1.55; }
+    .playbook-heading { color: var(--text); font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; margin: 36px 0 16px; opacity: 0.9; }
+    .playbook-list { padding-left: 0; }
+    .playbook-list::before { display: none; }
+    .playbook-list .event { margin-left: 0; }
+    .playbook-list .event::before { display: none; }
 
   </style>
 </head>
-<body>
+<body class="is-locked">
   <div class="password-gate" id="passwordGate">
     <div class="password-card">
-      <div class="password-kicker">Protected timeline</div>
-      <h1 class="password-title">Enter password to view</h1>
-      <p class="password-copy">This case timeline is restricted. Enter the shared password to continue.</p>
+      <div class="password-kicker">Protected case file</div>
+      <h2 class="password-title">BLOCKHOUSE VS DELIGHTMORE</h2>
+      <p class="password-copy">Enter the case password to open the timeline and search the record.</p>
       <form class="password-form" id="passwordForm">
-        <div class="password-row">
-          <input class="password-input" id="passwordInput" type="password" autocomplete="current-password" placeholder="Password" aria-label="Password" />
-          <button class="password-button" type="submit">Unlock</button>
-        </div>
-        <div class="password-error" id="passwordError" aria-live="polite"></div>
+        <input class="password-input" id="passwordInput" type="password" placeholder="Enter password" autocomplete="current-password" />
+        <button class="password-button" type="submit">Unlock</button>
       </form>
+      <div class="password-error" id="passwordError"></div>
     </div>
   </div>
-  <div class="app-shell is-locked" id="appShell">
   <header class="top-bar">
     <div class="top-inner">
       <div class="brand">BLOCKHOUSE STUDIOS V <span>DELIGHTMORE</span></div>
 
       <nav class="nav-chips" aria-label="Timeline filters">
-        <button class="nav-chip active" data-filter="all" style="color: var(--text);">All</button>
-        <button class="nav-chip" data-filter="contract" style="color: var(--lane-contract);">Contract</button>
-        <button class="nav-chip" data-filter="money" style="color: var(--lane-money);">Economics</button>
-        <button class="nav-chip" data-filter="ip" style="color: var(--lane-ip);">IP / Confidentiality</button>
-        <button class="nav-chip" data-filter="deliverable" style="color: var(--lane-deliverable);">Deliverables</button>
-        <button class="nav-chip" data-filter="production" style="color: var(--lane-production);">Production</button>
-        <button class="nav-chip" data-filter="access" style="color: var(--lane-access);">Access / Control</button>
-        <button class="nav-chip" data-filter="litigation" style="color: var(--lane-litigation);">Litigation</button>
+        <button class="nav-chip active" type="button" data-filter="all" style="color: var(--text);">All</button>
+        <button class="nav-chip" type="button" data-filter="contract" style="color: var(--lane-contract);">Contract</button>
+        <button class="nav-chip" type="button" data-filter="money" style="color: var(--lane-money);">Economics</button>
+        <button class="nav-chip" type="button" data-filter="ip" style="color: var(--lane-ip);">IP / Confidentiality</button>
+        <button class="nav-chip" type="button" data-filter="deliverable" style="color: var(--lane-deliverable);">Deliverables</button>
+        <button class="nav-chip" type="button" data-filter="production" style="color: var(--lane-production);">Production</button>
+        <button class="nav-chip" type="button" data-filter="access" style="color: var(--lane-access);">Access / Control</button>
+        <button class="nav-chip" type="button" data-filter="litigation" style="color: var(--lane-litigation);">Litigation</button>
       </nav>
     </div>
   </header>
@@ -545,7 +686,6 @@
   <main>
     <section class="hero">
       <p class="hero-kicker">Chronological narrative</p>
-      
       <div class="legend">
         <div class="lane-pill"><span class="lane-swatch" style="background: var(--lane-contract);"></span>Contract / Term</div>
         <div class="lane-pill"><span class="lane-swatch" style="background: var(--lane-money);"></span>Money / Payment</div>
@@ -560,29 +700,24 @@
     <section id="master-chronology" class="timeline-section">
       <div class="year-label">2024–2026 – Master Chronology</div>
       <div class="timeline" id="masterTimeline">
-
-<article class="event" data-tags="contract ip deliverable">
-          <div class="event-node node-contract"></div>
+        <article class="event" data-tags="contract production">
+          <div class="event-node node-production"></div>
           <div class="event-card">
             <div class="event-header">
               <div class="event-date">May 22, 2024</div>
-              <h2 class="event-title">DelightMore first encounters Blockhouse at Epson booth and pivots away from prior partner path</h2>
+              <h2 class="event-title">Epson booth pivot – DelightMore meets Blockhouse</h2>
             </div>
             <div class="chips-row">
-              <span class="chip lane-contract"><span class="chip-dot"></span>Origin story</span>
-              <span class="chip lane-ip"><span class="chip-dot"></span>Technical differentiator</span>
-              <span class="chip lane-deliverable"><span class="chip-dot"></span>Creative demo</span>
+              <span class="chip lane-production"><span class="chip-dot"></span>Origin</span>
+              <span class="chip lane-contract"><span class="chip-dot"></span>Partnership framing</span>
             </div>
             <div class="event-body">
-              DelightMore leadership, including Bobby and Michael, meets Blockhouse at Epson's booth and sees Blockhouse demonstrate how a streamlined Apple Silicon and MadMapper workflow can drive the full booth experience. The demonstration stands out because it delivers a clean, powerful result with less complexity and lower cost than traditional media-server approaches, while also showing Blockhouse's unusual ability to combine technical execution with creative design. After that meeting, DelightMore moves away from the earlier Brave Berlin path and begins pursuing Blockhouse as the preferred partner.
-            </div>
-            <div class="quotes">
-              <p class="quote-line">Key points preserved: Epson booth demo, Apple Silicon + MadMapper pipeline, simplicity, cost savings versus normal media servers, and the pivot away from Brave Berlin after meeting Blockhouse.</p>
+              At the Epson booth, DelightMore (Bobby and Michael) meets Blockhouse for the first time. BH demonstrates its Apple Silicon + MadMapper workflow. DM pivots away from its prior Brave Berlin partner path and toward Blockhouse — establishing the relationship that the NDA will memorialize two months later.
             </div>
           </div>
         </article>
 
-<article class="event" data-tags="contract ip">
+        <article class="event" data-tags="contract ip">
           <div class="event-node node-contract"></div>
           <div class="event-card">
             <div class="event-header">
@@ -603,7 +738,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="contract money">
+        <article class="event" data-tags="contract money">
           <div class="event-node node-contract"></div>
           <div class="event-card">
             <div class="event-header">
@@ -624,7 +759,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="money">
+        <article class="event" data-tags="money">
           <div class="event-node node-money"></div>
           <div class="event-card">
             <div class="event-header">
@@ -644,7 +779,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="contract">
+        <article class="event" data-tags="contract">
           <div class="event-node node-contract"></div>
           <div class="event-card">
             <div class="event-header">
@@ -663,7 +798,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="money">
+        <article class="event" data-tags="money">
           <div class="event-node node-money"></div>
           <div class="event-card">
             <div class="event-header">
@@ -683,7 +818,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="contract litigation">
+        <article class="event" data-tags="contract litigation">
           <div class="event-node node-contract"></div>
           <div class="event-card">
             <div class="event-header">
@@ -704,7 +839,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="money">
+        <article class="event" data-tags="money">
           <div class="event-node node-money"></div>
           <div class="event-card">
             <div class="event-header">
@@ -723,7 +858,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="money">
+        <article class="event" data-tags="money">
           <div class="event-node node-money"></div>
           <div class="event-card">
             <div class="event-header">
@@ -742,7 +877,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="deliverable ip">
+        <article class="event" data-tags="deliverable ip">
           <div class="event-node node-deliverable"></div>
           <div class="event-card">
             <div class="event-header">
@@ -759,7 +894,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="deliverable money">
+        <article class="event" data-tags="deliverable money">
           <div class="event-node node-deliverable"></div>
           <div class="event-card">
             <div class="event-header">
@@ -776,40 +911,95 @@
           </div>
         </article>
 
-<article class="event" data-tags="deliverable">
-          <div class="event-node node-deliverable"></div>
+        <article class="event" data-tags="access production litigation">
+          <div class="event-node node-case"></div>
           <div class="event-card">
             <div class="event-header">
-              <div class="event-date">Sept 25, 2025</div>
-              <h2 class="event-title">Formal (Gold) scene delivered</h2>
+              <div class="event-date">April 15, 2025</div>
+              <h3 class="event-title">Joint operations planning shows deep Blockhouse integration</h3>
             </div>
             <div class="chips-row">
-              <span class="chip lane-deliverable"><span class="chip-dot"></span>Deliverable</span>
-            </div>
-            <div class="event-body">
-              FORMAL (GOLD) with Formal Garden or Painting is delivered as a named scene in the Mercantile content catalogue. This is the first clearly dated final-scene delivery in the later summary.
-            </div>
-          </div>
-        </article>
-
-<article class="event" data-tags="access production">
-          <div class="event-node node-production"></div>
-          <div class="event-card">
-            <div class="event-header">
-              <div class="event-date">Oct 1–22, 2025</div>
-              <h2 class="event-title">BH performs intensive calibration, control, lighting, and system-build work</h2>
-            </div>
-            <div class="chips-row">
+              <span class="chip lane-access"><span class="chip-dot"></span>Operations</span>
               <span class="chip lane-production"><span class="chip-dot"></span>Production</span>
-              <span class="chip lane-access"><span class="chip-dot"></span>Systems</span>
             </div>
             <div class="event-body">
-              Timeline materials show Kroger event work, LED wall calibration, Room Designer and iPad companion-app development, audio cueing, virtual lighting programming, dome recalibration, UniFi installation, and a major iPad control overhaul from Oct. 1 through Oct. 22.
+              In the April 15 sync, both sides discussed Mercantile logistics, LED delivery, tariff exposure and bonded-warehouse contingency planning, investor-event coordination for the Mercantile, filming access at other DelightMore venues, and systems being actively built for Mercantile. Bobby authorizes filming The View chandelier and grants full venue access; DM walks BH through the TPP calendar, exposing full operational visibility; Lauren coordinates formal-garden filming locations in Cincinnati. The session underscores that Blockhouse was deeply embedded in operations and rollout planning.
+            </div>
+            <div class="quotes">
+              <p class="quote-line">Bobby: “You guys are full access anytime you needed our venues.”</p>
+              <p class="quote-line">“We've got a schedule for this week communicating that with Kevin and he's coordinating on his end with AI pixels to confirm the ship date.”</p>
+              <p class="quote-line">“These are the type of mechanisms that we're building actively for Mercantile.”</p>
             </div>
           </div>
         </article>
 
-<article class="event" data-tags="litigation">
+        <article class="event" data-tags="money litigation">
+          <div class="event-node node-money"></div>
+          <div class="event-card">
+            <div class="event-header">
+              <div class="event-date">April 23, 2025</div>
+              <h3 class="event-title">Internal financial meeting emphasizes transcripts and off-record concerns</h3>
+            </div>
+            <div class="chips-row">
+              <span class="chip lane-money"><span class="chip-dot"></span>Financials</span>
+              <span class="chip lane-litigation"><span class="chip-dot"></span>Documentation</span>
+            </div>
+            <div class="event-body">
+              In the April 23 internal financial strategy meeting, Kevin and Andy discussed using transcripts to rebut blame shifting, defended cost structure decisions, and flagged concern that key communications were being pushed into undocumented calls with no record. Kevin commits to keeping witnesses present in future conversations to preserve the record.
+            </div>
+            <div class="quotes">
+              <p class="quote-line">Kevin: “If he wants to try to shift the blame, we have the transcripts.”</p>
+              <p class="quote-line">Andy on Bobby: “What Bobby wants is this to just be conversations on the phone with no notes and no note taker and no record.”</p>
+              <p class="quote-line">Kevin: “What he's gonna find out is that I have people next to me from here forward.”</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="event" data-tags="money contract">
+          <div class="event-node node-money"></div>
+          <div class="event-card">
+            <div class="event-header">
+              <div class="event-date">April 23, 2025</div>
+              <h3 class="event-title">Blockhouse frames its ask as reimbursement and minimum guarantees, not new money</h3>
+            </div>
+            <div class="chips-row">
+              <span class="chip lane-money"><span class="chip-dot"></span>Recovery</span>
+              <span class="chip lane-contract"><span class="chip-dot"></span>Positioning</span>
+            </div>
+            <div class="event-body">
+              The same internal meeting frames Blockhouse’s position as recovering costs already advanced and securing predictable recoupment, while also asserting that the upgraded equipment path had wiped out expected profit and pushed the project into loss territory. Internal targets and the underlying math are documented: a $20K/month minimum guarantee with a $17K/month floor, a $586,000 cost basis with 30% markup totaling $761,800 over 36 months, and an investment ratio in which BH put in 12% of project cost while DM put in 88% — yet DM is offering only 2% of room rental.
+            </div>
+            <div class="quotes">
+              <p class="quote-line">Kevin: “We aren't asking more money. We're just asking for guarantees that we're going to get the numbers that you're showing us.”</p>
+              <p class="quote-line">Andy: “If they want to get out of the situation… they need to pay the remaining to make us whole.”</p>
+              <p class="quote-line">Andy on the split: “BH invested 12% of the cost and DM invested 88%, but they're only trying to give us 2% of the room rental.”</p>
+              <p class="quote-line">“With the upgrade, we lost all of our profit. We lost all of our profit plus an additional loss of 32,000.”</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="event" data-tags="money deliverable">
+          <div class="event-node node-money"></div>
+          <div class="event-card">
+            <div class="event-header">
+              <div class="event-date">August 11, 2025</div>
+              <h3 class="event-title">Ballroom projector revision presented as lower-cost substitute with large credit</h3>
+            </div>
+            <div class="chips-row">
+              <span class="chip lane-money"><span class="chip-dot"></span>Equipment</span>
+              <span class="chip lane-deliverable"><span class="chip-dot"></span>Projectors</span>
+            </div>
+            <div class="event-body">
+              The projector narrative says the ballroom floor projection package was revised late for budget and aspect-ratio reasons, that Blockhouse had recommended against buying the ballroom projectors because of budget strain, and that DelightMore received a substantial credit from the revised selection.
+            </div>
+            <div class="quotes">
+              <p class="quote-line">“DelightMore was credited $91,382.10 to accommodate the difference in value between the original 4K projectors and the 4KE projectors that were ultimately installed.”</p>
+              <p class="quote-line">“This was the most affordable option for the projector model required for the space.”</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="event" data-tags="litigation">
           <div class="event-node node-litigation"></div>
           <div class="event-card">
             <div class="event-header">
@@ -829,7 +1019,40 @@
           </div>
         </article>
 
-<article class="event" data-tags="deliverable production">
+        <article class="event" data-tags="deliverable">
+          <div class="event-node node-deliverable"></div>
+          <div class="event-card">
+            <div class="event-header">
+              <div class="event-date">Sept 25, 2025</div>
+              <h2 class="event-title">Formal (Gold) scene delivered</h2>
+            </div>
+            <div class="chips-row">
+              <span class="chip lane-deliverable"><span class="chip-dot"></span>Deliverable</span>
+            </div>
+            <div class="event-body">
+              FORMAL (GOLD) with Formal Garden or Painting is delivered as a named scene in the Mercantile content catalogue. This is the first clearly dated final-scene delivery in the later summary.
+            </div>
+          </div>
+        </article>
+
+        <article class="event" data-tags="access production">
+          <div class="event-node node-production"></div>
+          <div class="event-card">
+            <div class="event-header">
+              <div class="event-date">Oct 1–22, 2025</div>
+              <h2 class="event-title">BH performs intensive calibration, control, lighting, and system-build work</h2>
+            </div>
+            <div class="chips-row">
+              <span class="chip lane-production"><span class="chip-dot"></span>Production</span>
+              <span class="chip lane-access"><span class="chip-dot"></span>Systems</span>
+            </div>
+            <div class="event-body">
+              Timeline materials show Kroger event work, LED wall calibration, Room Designer and iPad companion-app development, audio cueing, virtual lighting programming, dome recalibration, UniFi installation, and a major iPad control overhaul from Oct. 1 through Oct. 22.
+            </div>
+          </div>
+        </article>
+
+        <article class="event" data-tags="deliverable production">
           <div class="event-node node-deliverable"></div>
           <div class="event-card">
             <div class="event-header">
@@ -846,7 +1069,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="deliverable">
+        <article class="event" data-tags="deliverable">
           <div class="event-node node-deliverable"></div>
           <div class="event-card">
             <div class="event-header">
@@ -862,7 +1085,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="deliverable production">
+        <article class="event" data-tags="deliverable production">
           <div class="event-node node-deliverable"></div>
           <div class="event-card">
             <div class="event-header">
@@ -879,7 +1102,67 @@
           </div>
         </article>
 
-<article class="event" data-tags="litigation">
+        <article class="event" data-tags="deliverable production money">
+          <div class="event-node node-deliverable"></div>
+          <div class="event-card">
+            <div class="event-header">
+              <div class="event-date">November 12, 2025</div>
+              <h3 class="event-title">Post-launch meeting reflects reliance on Blockhouse templates, pricing tools, and implementation knowledge</h3>
+            </div>
+            <div class="chips-row">
+              <span class="chip lane-deliverable"><span class="chip-dot"></span>Templates</span>
+              <span class="chip lane-production"><span class="chip-dot"></span>Implementation</span>
+            </div>
+            <div class="event-body">
+              Don, Nick, Kevin, and Lauren walk through pricing for implementation work built on Blockhouse templates and internal design documents, while acknowledging that BH’s pricing/spec sheet remains in active use by DelightMore personnel. The discussion anchors market-rate equipment pricing (a recent 24-foot LED screen rental at ≈$3,000/day), confirms the $225K content recoup is being offset against the 7% room-share over two years, restates that BH cannot renegotiate labor invoices already paid out to crews, and flags that BH is subsidizing high-end events while invoices keep accruing without payment.
+            </div>
+            <div class="quotes">
+              <p class="quote-line">Kevin on implementation fee: “They're getting access to our templates that took hundreds of hours of work that are just internal use things.”</p>
+              <p class="quote-line">Lauren on retention: “It's very important that we have retention of our staff because the system is so unique. These guys have literally built, helped build the system and they know how to run it.”</p>
+              <p class="quote-line">Kevin on market rate: “We rented out one of our LED screens the other day, like a 24 foot LED screen — it was close to $3,000 for a one day rental… that's the going rate.”</p>
+              <p class="quote-line">Lauren on the $225K content recoup: “Delightmore and Blockhouse agreed that that would be offset and not paid up front, and it would be offset by the room share 7% revenue share… recouped over two years, and then if not, after two years we would renegotiate.”</p>
+              <p class="quote-line">Kevin on labor invoices: “We can't negotiate those prices different. I've paid those guys out for that. It's the invoice that we sent. It's the quote that we sent.”</p>
+              <p class="quote-line">Lauren: “Invoices delivered for visibility, but payment on those invoices has not been executed.”</p>
+              <p class="quote-line">Kevin: “We just can't get stuck like — right now we have a lot of invoices out and we're worried because we keep accruing more.”</p>
+              <p class="quote-line">Kevin on urgency: “There's a major urgency to this, not just financially, but also logistically. Because we keep delivering these events at such a high level for the clients, but Blockhouse is subsidizing it.”</p>
+              <p class="quote-line">“Elizabeth was literally just in this document like five minutes ago. So she's actively using it.”</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="event" data-tags="production">
+          <div class="event-node node-production"></div>
+          <div class="event-card">
+            <div class="event-header">
+              <div class="event-date">Nov–Dec 2025</div>
+              <h2 class="event-title">Continuous event labor continues after launch</h2>
+            </div>
+            <div class="chips-row">
+              <span class="chip lane-production"><span class="chip-dot"></span>Production</span>
+            </div>
+            <div class="event-body">
+              Timeline records show post-launch resets, Aubrey Rose prep and gala execution, branded-scene deployment, AV upgrades, Bar Mitzvah preparation and execution, holiday-party programming, PatientPoint support, and UC Real Estate breakfast work across November and December.
+            </div>
+          </div>
+        </article>
+
+        <article class="event" data-tags="deliverable">
+          <div class="event-node node-deliverable"></div>
+          <div class="event-card">
+            <div class="event-header">
+              <div class="event-date">Dec 2, 2025</div>
+              <h2 class="event-title">Formal (Silver) scene delivered</h2>
+            </div>
+            <div class="chips-row">
+              <span class="chip lane-deliverable"><span class="chip-dot"></span>Deliverable</span>
+            </div>
+            <div class="event-body">
+              FORMAL (SILVER) with Formal Garden or Painting is delivered, showing the formal scene family continuing to expand after the September delivery.
+            </div>
+          </div>
+        </article>
+
+        <article class="event" data-tags="litigation">
           <div class="event-node node-litigation"></div>
           <div class="event-card">
             <div class="event-header">
@@ -898,39 +1181,51 @@
           </div>
         </article>
 
-<article class="event" data-tags="production">
-          <div class="event-node node-production"></div>
+        <article class="event" data-tags="access ip litigation">
+          <div class="event-node node-access"></div>
           <div class="event-card">
             <div class="event-header">
-              <div class="event-date">Nov–Dec 2025</div>
-              <h2 class="event-title">Continuous event labor continues after launch</h2>
+              <div class="event-date">January 9, 2026</div>
+              <h3 class="event-title">Security-camera transcript captures Harris Media activity and file-copying references</h3>
             </div>
             <div class="chips-row">
-              <span class="chip lane-production"><span class="chip-dot"></span>Production</span>
+              <span class="chip lane-access"><span class="chip-dot"></span>Control room</span>
+              <span class="chip lane-ip"><span class="chip-dot"></span>Copying</span>
             </div>
             <div class="event-body">
-              Timeline records show post-launch resets, Aubrey Rose prep and gala execution, branded-scene deployment, AV upgrades, Bar Mitzvah preparation and execution, holiday-party programming, PatientPoint support, and UC Real Estate breakfast work across November and December.
+              The cleaned January 9 security-camera transcript records Harris Media personnel touring sensitive spaces, discussing technical choices, and referencing copying activity during the visit, followed by control-room handling and hard-drive discussion.
+            </div>
+            <div class="quotes">
+              <p class="quote-line">“Client Events is copying - it's about 56 gigs, about 20 minutes.”</p>
+              <p class="quote-line">“All I did was eject the hard drive.”</p>
             </div>
           </div>
         </article>
 
-<article class="event" data-tags="deliverable">
-          <div class="event-node node-deliverable"></div>
+        <article class="event" data-tags="litigation access">
+          <div class="event-node node-litigation"></div>
           <div class="event-card">
             <div class="event-header">
-              <div class="event-date">Dec 2, 2025</div>
-              <h2 class="event-title">Formal (Silver) scene delivered</h2>
+              <div class="event-date">January 9, 2026</div>
+              <h3 class="event-title">Elizabeth and Sylvia express concern about Michael and say Blockhouse should not be lost entirely</h3>
             </div>
             <div class="chips-row">
-              <span class="chip lane-deliverable"><span class="chip-dot"></span>Deliverable</span>
+              <span class="chip lane-litigation"><span class="chip-dot"></span>Continuity</span>
+              <span class="chip lane-access"><span class="chip-dot"></span>Knowledge loss</span>
             </div>
             <div class="event-body">
-              FORMAL (SILVER) with Formal Garden or Painting is delivered, showing the formal scene family continuing to expand after the September delivery.
+              After the Harris Media visit, the same cleaned transcript records Elizabeth and Sylvia questioning Michael’s conduct and discussing the risk of losing Blockhouse entirely, suggesting continuing recognition of Blockhouse’s role in venue knowledge and continuity.
+            </div>
+            <div class="quotes">
+              <p class="quote-line">“I cannot believe the way he (Michael) talked to you last night.”</p>
+              <p class="quote-line">“He is Machiavellian.”</p>
+              <p class="quote-line">“We need to not lose Blockhouse entirely.”</p>
+              <p class="quote-line">“We're still realizing there's so much to learn.”</p>
             </div>
           </div>
         </article>
 
-<article class="event" data-tags="deliverable">
+        <article class="event" data-tags="deliverable">
           <div class="event-node node-deliverable"></div>
           <div class="event-card">
             <div class="event-header">
@@ -946,7 +1241,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="access">
+        <article class="event" data-tags="access">
           <div class="event-node node-access"></div>
           <div class="event-card">
             <div class="event-header">
@@ -966,7 +1261,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="access">
+        <article class="event" data-tags="access">
           <div class="event-node node-access"></div>
           <div class="event-card">
             <div class="event-header">
@@ -986,7 +1281,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="litigation">
+        <article class="event" data-tags="litigation">
           <div class="event-node node-litigation"></div>
           <div class="event-card">
             <div class="event-header">
@@ -1005,7 +1300,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="deliverable money">
+        <article class="event" data-tags="deliverable money">
           <div class="event-node node-deliverable"></div>
           <div class="event-card">
             <div class="event-header">
@@ -1022,7 +1317,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="ip litigation">
+        <article class="event" data-tags="ip litigation">
           <div class="event-node node-ip"></div>
           <div class="event-card">
             <div class="event-header">
@@ -1043,7 +1338,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="deliverable money">
+        <article class="event" data-tags="deliverable money">
           <div class="event-node node-deliverable"></div>
           <div class="event-card">
             <div class="event-header">
@@ -1060,7 +1355,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="ip">
+        <article class="event" data-tags="ip">
           <div class="event-node node-ip"></div>
           <div class="event-card">
             <div class="event-header">
@@ -1079,7 +1374,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="access">
+        <article class="event" data-tags="access">
           <div class="event-node node-access"></div>
           <div class="event-card">
             <div class="event-header">
@@ -1099,7 +1394,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="contract litigation">
+        <article class="event" data-tags="contract litigation">
           <div class="event-node node-contract"></div>
           <div class="event-card">
             <div class="event-header">
@@ -1119,7 +1414,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="access ip">
+        <article class="event" data-tags="access ip">
           <div class="event-node node-ip"></div>
           <div class="event-card">
             <div class="event-header">
@@ -1141,7 +1436,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="litigation">
+        <article class="event" data-tags="litigation">
           <div class="event-node node-litigation"></div>
           <div class="event-card">
             <div class="event-header">
@@ -1161,7 +1456,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="contract ip">
+        <article class="event" data-tags="contract ip">
           <div class="event-node node-ip"></div>
           <div class="event-card">
             <div class="event-header">
@@ -1173,76 +1468,55 @@
               <span class="chip lane-contract"><span class="chip-dot"></span>First refusal</span>
             </div>
             <div class="event-body">
-              Security footage captures admissions about copying BH files, Harris staff referencing “templates,” and DM turning to Lightborne for new files while bypassing BH’s first right of refusal for the March 12 event.
+              The Mercantile security-camera recording timestamped 4:12:39 PM EDT on March 12, 2026 is the strongest single piece of evidence in the file. Michael, his counsel Jerin, and Rudy Harris are recorded discussing the copying of Blockhouse project files, the move away from MadMapper, BH’s alleged “dishonesty,” and Rudy’s prior September presence at the venue. Jerin warns Michael multiple times that the IP exposure may not be defensible regardless of intent. The same day, Harris staff are overheard saying they “got in trouble” for “getting into” BH “templates,” and DM brings in Lightborne to produce new files for the March 12 event — bypassing BH’s first right of refusal under the SPA.
             </div>
             <div class="quotes">
-              <p class="quote-line">“On March 12, security footage captures Michael stating that ‘We copied your file…and then we created new.’”</p>
+              <p class="quote-line">Michael: “We have not been dishonest. We have been transparent.”</p>
+              <p class="quote-line">Jerin: “I don't think dishonesty has anything to do with the law… copyright and intellectual property, although the arguments that we have that we own it, that we have the software for it, that may not even be enough.”</p>
+              <p class="quote-line">Michael: “We copied your file. And then we created all new.”</p>
+              <p class="quote-line">Michael: “So we opened your thing to see what it was like. And everything now is being created.”</p>
+              <p class="quote-line">Michael: “Simon, we are moving away from Madmapper… companies that we are now engaging with are telling us we need a higher quality. I almost said that. But I decided not to do that.”</p>
+              <p class="quote-line">Jerin: “You can't do that. Do you know intellectual property well enough to know that's the case?”</p>
+              <p class="quote-line">Michael: “I paid you 3.2 million. You can't verify where I spent my money on. And then you tell me that I'm breaking my agreement by having consultants come in and back-check the information.”</p>
+              <p class="quote-line">Michael: “When we suspected you of dishonesty, we had to verify it. And now that we have verified dishonesty… those are old projectors in that room. And they billed us $248,000.”</p>
+              <p class="quote-line">Michael (re Rudy/Harris): “Rudy was in there for dress for success in September. I prefer talking about it.”</p>
+              <p class="quote-line">Jerin: “It may not even fucking matter if you told him, Michael.”</p>
+              <p class="quote-line">Rudy: “There could be some amount of law interpreted… No, you did break it by doing that. I agree. He agrees. We agree. I wouldn't have come in.”</p>
               <p class="quote-line">Footage shows Harris staff saying they “got in trouble” for “getting into” BH “templates.”</p>
               <p class="quote-line">“Once they realized they couldn’t use BH templates, DM brought in yet another media company, Lightborne, to create new files… BH was never asked to support this event, which was a direct violation of the first right-of-refusal clause provided in the SPA.”</p>
             </div>
           </div>
         </article>
 
-<article class="event" data-tags="access litigation">
-          <div class="event-node node-access"></div>
-          <div class="event-card">
-            <div class="event-header">
-              <div class="event-date">Access Defense</div>
-              <h2 class="event-title">If they say: “We needed the reset because we lacked control of the network.”</h2>
-            </div>
-            <div class="chips-row">
-              <span class="chip lane-access"><span class="chip-dot"></span>Response</span>
-              <span class="chip lane-litigation"><span class="chip-dot"></span>Best reply</span>
-            </div>
-            <div class="event-body">
-              <strong>You say:</strong> The record says the opposite. DM requested shared access in January, confirmed users were active, and by early February BH documented DM had “full unlimited control” except deleting BH accounts. The March 8 reset looks like exclusion, not access recovery.
-            </div>
-            <div class="quotes">
-              <p class="quote-line">Use timeline cards: Jan 15 request for “shared visibility,” Feb 2 “full unlimited control,” Mar 8 reset “to remove BH access.”</p>
-            </div>
-          </div>
-        </article>
-
-<article class="event" data-tags="contract money">
-          <div class="event-node node-money"></div>
-          <div class="event-card">
-            <div class="event-header">
-              <div class="event-date">Event Support Defense</div>
-              <h2 class="event-title">If they say: “BH wasn’t in a position to support the March 12 event anyway.”</h2>
-            </div>
-            <div class="chips-row">
-              <span class="chip lane-money"><span class="chip-dot"></span>Response</span>
-              <span class="chip lane-contract"><span class="chip-dot"></span>First refusal</span>
-            </div>
-            <div class="event-body">
-              <strong>You say:</strong> The point is not just capacity; it is contractual sequence. BH was never asked to support the event, and Andy’s narrative treats that as a direct violation of the SPA’s first right‑of‑refusal while DM was simultaneously using copied files and substitute vendors.
-            </div>
-            <div class="quotes">
-              <p class="quote-line">Use cards: Mar 10–12 copying sequence and the statement that BH “was never asked to support this event.”</p>
-            </div>
-          </div>
-        </article>
-
-<article class="event" data-tags="ip">
+        <article class="event" data-tags="ip money litigation">
           <div class="event-node node-ip"></div>
           <div class="event-card">
             <div class="event-header">
-              <div class="event-date">IP Defense</div>
-              <h2 class="event-title">If they say: “We didn’t steal IP; we made new files.”</h2>
+              <div class="event-date">March 12, 2026</div>
+              <h3 class="event-title">Memo highlights later copying statement and Blockhouse’s unreimbursed-cost position</h3>
             </div>
             <div class="chips-row">
-              <span class="chip lane-ip"><span class="chip-dot"></span>Response</span>
+              <span class="chip lane-ip"><span class="chip-dot"></span>Copying</span>
+              <span class="chip lane-money"><span class="chip-dot"></span>Deficit</span>
             </div>
             <div class="event-body">
-              <strong>You say:</strong> Making new files after copying the old ones does not erase the copying. The timeline records copied project files, testing and reverse engineering, “getting into” BH templates, and Michael’s own statement: “We copied your file… and then we created new.”
+              A later memo prepared for Mark highlights a March 12 security-camera excerpt in which Michael Forgus, speaking with Jerin Dunham and Rudy Harris, reportedly says that they copied the file and then created new work, while also summarizing Blockhouse’s unreimbursed equipment-and-labor deficit and content-cost position.
             </div>
             <div class="quotes">
-              <p class="quote-line">Use cards: NDA baseline, Mar 10 hard‑drive transfer, Mar 10 reverse engineering, Mar 12 copied‑file admission.</p>
+              <p class="quote-line">“We copied your file. ... And then we created all new.”</p>
             </div>
           </div>
         </article>
+      </div>
+    </section>
 
-<article class="event" data-tags="access contract ip money">
+    <section id="defense-playbook" class="timeline-section playbook-section">
+      <div class="year-label">Key Takeaways &amp; Defense Playbook</div>
+      <p class="playbook-intro">High-level conclusions from the chronology and prepared rebuttals to anticipated counter-arguments. These are not events on the timeline.</p>
+
+      <h3 class="playbook-heading">Key Takeaways</h3>
+      <div class="timeline playbook-list">
+        <article class="event">
           <div class="event-node node-litigation"></div>
           <div class="event-card">
             <div class="event-header">
@@ -1264,7 +1538,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="litigation">
+        <article class="event">
           <div class="event-node node-litigation"></div>
           <div class="event-card">
             <div class="event-header">
@@ -1283,7 +1557,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="ip money">
+        <article class="event">
           <div class="event-node node-money"></div>
           <div class="event-card">
             <div class="event-header">
@@ -1303,8 +1577,70 @@
             </div>
           </div>
         </article>
+      </div>
 
-<article class="event" data-tags="money">
+      <h3 class="playbook-heading">Defense Playbook</h3>
+      <div class="timeline playbook-list">
+        <article class="event">
+          <div class="event-node node-access"></div>
+          <div class="event-card">
+            <div class="event-header">
+              <div class="event-date">Access Defense</div>
+              <h2 class="event-title">If they say: “We needed the reset because we lacked control of the network.”</h2>
+            </div>
+            <div class="chips-row">
+              <span class="chip lane-access"><span class="chip-dot"></span>Response</span>
+              <span class="chip lane-litigation"><span class="chip-dot"></span>Best reply</span>
+            </div>
+            <div class="event-body">
+              <strong>You say:</strong> The record says the opposite. DM requested shared access in January, confirmed users were active, and by early February BH documented DM had “full unlimited control” except deleting BH accounts. The March 8 reset looks like exclusion, not access recovery.
+            </div>
+            <div class="quotes">
+              <p class="quote-line">Use timeline cards: Jan 15 request for “shared visibility,” Feb 2 “full unlimited control,” Mar 8 reset “to remove BH access.”</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="event">
+          <div class="event-node node-money"></div>
+          <div class="event-card">
+            <div class="event-header">
+              <div class="event-date">Event Support Defense</div>
+              <h2 class="event-title">If they say: “BH wasn’t in a position to support the March 12 event anyway.”</h2>
+            </div>
+            <div class="chips-row">
+              <span class="chip lane-money"><span class="chip-dot"></span>Response</span>
+              <span class="chip lane-contract"><span class="chip-dot"></span>First refusal</span>
+            </div>
+            <div class="event-body">
+              <strong>You say:</strong> The point is not just capacity; it is contractual sequence. BH was never asked to support the event, and Andy’s narrative treats that as a direct violation of the SPA’s first right‑of‑refusal while DM was simultaneously using copied files and substitute vendors.
+            </div>
+            <div class="quotes">
+              <p class="quote-line">Use cards: Mar 10–12 copying sequence and the statement that BH “was never asked to support this event.”</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="event">
+          <div class="event-node node-ip"></div>
+          <div class="event-card">
+            <div class="event-header">
+              <div class="event-date">IP Defense</div>
+              <h2 class="event-title">If they say: “We didn’t steal IP; we made new files.”</h2>
+            </div>
+            <div class="chips-row">
+              <span class="chip lane-ip"><span class="chip-dot"></span>Response</span>
+            </div>
+            <div class="event-body">
+              <strong>You say:</strong> Making new files after copying the old ones does not erase the copying. The timeline records copied project files, testing and reverse engineering, “getting into” BH templates, and Michael’s own statement: “We copied your file… and then we created new.”
+            </div>
+            <div class="quotes">
+              <p class="quote-line">Use cards: NDA baseline, Mar 10 hard‑drive transfer, Mar 10 reverse engineering, Mar 12 copied‑file admission.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="event">
           <div class="event-node node-money"></div>
           <div class="event-card">
             <div class="event-header">
@@ -1323,7 +1659,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="litigation">
+        <article class="event">
           <div class="event-node node-litigation"></div>
           <div class="event-card">
             <div class="event-header">
@@ -1342,7 +1678,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="contract">
+        <article class="event">
           <div class="event-node node-contract"></div>
           <div class="event-card">
             <div class="event-header">
@@ -1361,7 +1697,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="litigation">
+        <article class="event">
           <div class="event-node node-litigation"></div>
           <div class="event-card">
             <div class="event-header">
@@ -1380,7 +1716,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="contract">
+        <article class="event">
           <div class="event-node node-contract"></div>
           <div class="event-card">
             <div class="event-header">
@@ -1399,7 +1735,7 @@
           </div>
         </article>
 
-<article class="event" data-tags="ip">
+        <article class="event">
           <div class="event-node node-ip"></div>
           <div class="event-card">
             <div class="event-header">
@@ -1421,198 +1757,504 @@
     </section>
 
 
+
   </main>
-  </div>
 
     <div class="bottom-date-bar">
     <div class="bottom-date-inner">
-      <button id="dockToggleButton" type="button" class="dock-toggle-button dock-pill" aria-pressed="false" aria-controls="dockSearchPanel" aria-label="Open search">Search</button>
-      <div class="scroll-date-pill dock-pill" id="dockDatePill">
-        <div class="scroll-date-label">Current timeline date</div>
-        <div class="scroll-date-value" id="scrollDateValue">May 22, 2024</div>
-      </div>
-      <div class="bottom-search-wrap dock-pill is-hidden" id="dockSearchPanel">
-        <div class="bottom-search-row">
-          <input id="timelineSearchInput" type="search" placeholder="Search events, names, or keywords" aria-label="Search" class="bottom-search-input" />
-          <button id="timelineSearchClear" type="button" class="bottom-search-clear">Clear</button>
+      <div class="scroll-date-pill" id="timelinePill">
+        <div class="pill-center" id="pillCenter">
+          <div class="scroll-date-label">Current timeline date</div>
+          <div class="scroll-date-value" id="scrollDateValue">July 23, 2024</div>
         </div>
-        <div id="timelineSearchCount" class="bottom-search-count"></div>
+        <div class="pill-row">
+          <div class="pill-left is-compact" id="pillLeft">
+            <button class="pill-search-toggle" id="searchToggle" type="button" aria-label="Open timeline search" aria-expanded="false">
+              <svg class="icon-search" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+              <svg class="icon-close" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+            </button>
+            <label class="pill-search-shell is-hidden" id="pillSearchShell" for="timelineSearch" aria-label="Search timeline">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="color: var(--muted); flex: 0 0 auto;"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+              <input id="timelineSearch" type="search" placeholder="Search timeline..." autocomplete="off" />
+            </label>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 <script>
-(function () {
+(function(){
   const PASSWORD = 'bhdmcase';
   const gate = document.getElementById('passwordGate');
   const form = document.getElementById('passwordForm');
   const input = document.getElementById('passwordInput');
   const error = document.getElementById('passwordError');
-  const shell = document.getElementById('appShell');
-  let unlocked = false;
-
-  function unlockApp() {
-    unlocked = true;
-    if (gate) gate.style.display = 'none';
-    if (shell) shell.classList.remove('is-locked');
-  }
-
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const value = (input && input.value ? input.value : '').trim();
-      if (value === PASSWORD) {
-        if (error) error.textContent = '';
-        unlockApp();
-        applyVisibility();
-        setTimeout(updateCurrentDate, 60);
-      } else {
-        if (error) error.textContent = 'Incorrect password.';
-        if (input) {
-          input.value = '';
-          input.focus();
-        }
-      }
-    });
-    setTimeout(function () { if (!unlocked && input) input.focus(); }, 60);
-  }
-
-  const filterButtons = Array.from(document.querySelectorAll('.nav-chip[data-filter]'));
-  const events = Array.from(document.querySelectorAll('#masterTimeline .event'));
-  const dateValue = document.getElementById('scrollDateValue');
-  const timeline = document.getElementById('masterTimeline');
-  const searchInput = document.getElementById('timelineSearchInput');
-  const clearButton = document.getElementById('timelineSearchClear');
-  const searchCount = document.getElementById('timelineSearchCount');
-  const dockToggleButton = document.getElementById('dockToggleButton');
-  const dockDatePill = document.getElementById('dockDatePill');
-  const dockSearchPanel = document.getElementById('dockSearchPanel');
+  const buttons = Array.from(document.querySelectorAll('.nav-chip[data-filter]'));
+  const events = Array.from(document.querySelectorAll('.event[data-tags]'));
+  const dateNode = document.getElementById('scrollDateValue');
+  const searchInput = document.getElementById('timelineSearch');
+  const searchToggle = document.getElementById('searchToggle');
+  const searchShell = document.getElementById('pillSearchShell');
+  const pillLeft = document.getElementById('pillLeft');
+  const pillCenter = document.getElementById('pillCenter');
   let activeFilter = 'all';
-  let activeSearch = '';
+  let activeQuery = '';
 
+  function unlock(){
+    if(gate) gate.classList.add('is-hidden');
+    document.body.classList.remove('is-locked');
+  }
 
-  function setSearchMode(isSearchOpen) {
-    if (dockToggleButton) dockToggleButton.setAttribute('aria-pressed', isSearchOpen ? 'true' : 'false');
-    if (dockToggleButton) dockToggleButton.textContent = isSearchOpen ? 'Close' : 'Search';
-    if (dockDatePill) dockDatePill.style.display = isSearchOpen ? 'none' : '';
-    if (dockSearchPanel) dockSearchPanel.classList.toggle('is-hidden', !isSearchOpen);
-    if (isSearchOpen && searchInput) {
-      setTimeout(function () { searchInput.focus(); }, 30);
+  function tryUnlock(){
+    const value = ((input && input.value) || '').trim().toLowerCase();
+    if(value === PASSWORD.toLowerCase()){
+      if(error) error.textContent = '';
+      unlock();
+    } else {
+      if(error) error.textContent = 'Incorrect password. Try again.';
     }
-    if (!isSearchOpen && searchInput && !searchInput.value.trim()) {
-      activeSearch = '';
-      applyVisibility();
-    }
   }
 
-  function getEventDateText(event) {
-    const el = event.querySelector('.event-date');
-    return el ? el.textContent.trim() : '';
-  }
-
-  function getVisibleEvents() {
-    return events.filter(function (event) { return !event.classList.contains('is-hidden'); });
-  }
-
-  function eventMatchesSearch(event, query) {
-    if (!query) return true;
-    const haystack = (event.innerText || event.textContent || '').toLowerCase();
-    return haystack.indexOf(query) !== -1;
-  }
-
-  function updateSearchCount() {
-    if (!searchCount) return;
-    if (!activeSearch) {
-      searchCount.textContent = '';
-      return;
-    }
-    const count = getVisibleEvents().length;
-    searchCount.textContent = count === 1 ? '1 matching event' : count + ' matching events';
-  }
-
-  function applyVisibility() {
-    filterButtons.forEach(function (btn) {
-      btn.classList.toggle('active', btn.dataset.filter === activeFilter);
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      tryUnlock();
     });
-    events.forEach(function (event) {
-      const tags = (event.dataset.tags || '').split(/\s+/).filter(Boolean);
-      const filterMatch = activeFilter === 'all' || tags.indexOf(activeFilter) !== -1;
-      const searchMatch = eventMatchesSearch(event, activeSearch);
-      event.classList.toggle('is-hidden', !(filterMatch && searchMatch));
-    });
-    updateSearchCount();
-    updateCurrentDate();
   }
-
-  function updateCurrentDate() {
-    const visible = getVisibleEvents();
-    if (!visible.length) {
-      if (dateValue) dateValue.textContent = 'No visible events';
-      return;
-    }
-    const viewportMid = window.innerHeight * 0.38;
-    let bestEvent = visible[0];
-    let bestDistance = Infinity;
-    visible.forEach(function (event) {
-      const rect = event.getBoundingClientRect();
-      const anchor = rect.top + Math.min(rect.height * 0.35, 120);
-      const distance = Math.abs(anchor - viewportMid);
-      if (distance < bestDistance) {
-        bestDistance = distance;
-        bestEvent = event;
+  const passwordButton = document.querySelector('.password-button');
+  if(passwordButton){
+    passwordButton.addEventListener('click', function(e){
+      e.preventDefault();
+      tryUnlock();
+    });
+  }
+  if(input){
+    input.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){
+        e.preventDefault();
+        tryUnlock();
       }
     });
-    if (dateValue) dateValue.textContent = getEventDateText(bestEvent) || 'Timeline';
   }
 
-  filterButtons.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      activeFilter = btn.dataset.filter || 'all';
-      applyVisibility();
+  function visibleEvents(){ return events.filter(ev => !ev.classList.contains('is-hidden')); }
+
+  function updateScrollDate(){
+    if(!dateNode) return;
+    const visible = visibleEvents();
+    if(!visible.length){
+      dateNode.textContent = activeQuery ? 'No matches' : 'No visible events';
+      return;
+    }
+    const probe = window.innerHeight * 0.42;
+    let active = visible[0];
+    for(const ev of visible){
+      const r = ev.getBoundingClientRect();
+      if(r.top <= probe){ active = ev; } else { break; }
+    }
+    const dateEl = active.querySelector('.event-date');
+    if(dateEl) dateNode.textContent = dateEl.textContent.trim();
+  }
+
+  function applyVisibility(){
+    events.forEach(ev => {
+      const tags = (ev.dataset.tags || '').trim().split(/\s+/).filter(Boolean);
+      const filterPass = activeFilter === 'all' || tags.includes(activeFilter);
+      const text = (ev.textContent || '').toLowerCase();
+      const queryPass = !activeQuery || text.includes(activeQuery);
+      ev.classList.toggle('is-hidden', !(filterPass && queryPass));
     });
+    buttons.forEach(btn => btn.classList.toggle('active', btn.dataset.filter === activeFilter));
+    updateScrollDate();
+  }
+
+  function setActiveFilter(value){
+    activeFilter = value || 'all';
+    applyVisibility();
+  }
+
+  buttons.forEach(btn => btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    setActiveFilter(btn.dataset.filter);
+  }));
+
+  document.addEventListener('click', (e) => {
+    const chip = e.target.closest('.nav-chip[data-filter]');
+    if(!chip) return;
+    e.preventDefault();
+    setActiveFilter(chip.dataset.filter);
   });
 
-  if (searchInput) {
-    searchInput.addEventListener('input', function () {
-      activeSearch = searchInput.value.trim().toLowerCase();
-      applyVisibility();
+  function openSearch(){
+    if(pillLeft) pillLeft.classList.add('is-open');
+    if(pillCenter) pillCenter.classList.add('is-hidden');
+    if(searchShell) searchShell.classList.remove('is-hidden');
+    if(searchToggle) { searchToggle.setAttribute('aria-expanded','true'); searchToggle.classList.add('is-active'); searchToggle.setAttribute('aria-label','Close timeline search'); }
+    if(searchInput) searchInput.focus();
+  }
+
+  function closeSearch(){
+    if(searchInput) searchInput.value = '';
+    activeQuery = '';
+    applyVisibility();
+    if(pillLeft) pillLeft.classList.remove('is-open');
+    if(pillCenter) pillCenter.classList.remove('is-hidden');
+    if(searchShell) searchShell.classList.add('is-hidden');
+    if(searchToggle) { searchToggle.setAttribute('aria-expanded','false'); searchToggle.classList.remove('is-active'); searchToggle.setAttribute('aria-label','Open timeline search'); }
+  }
+
+  function toggleSearch(){
+    const open = searchShell && !searchShell.classList.contains('is-hidden');
+    if(open) closeSearch(); else openSearch();
+  }
+
+  if(searchToggle) searchToggle.addEventListener('click', toggleSearch);
+  function syncSearchValue(){
+    activeQuery = ((searchInput && searchInput.value) || '').trim().toLowerCase();
+    applyVisibility();
+  }
+
+  if(searchInput){
+    ['input','search','keyup','change'].forEach(evt => {
+      searchInput.addEventListener(evt, syncSearchValue);
+    });
+    searchInput.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape') closeSearch();
     });
   }
 
-  if (clearButton) {
-    clearButton.addEventListener('click', function () {
-      if (searchInput) searchInput.value = '';
-      activeSearch = '';
-      applyVisibility();
-      if (searchInput) searchInput.focus();
-    });
-  }
-
-  if (dockToggleButton) {
-    dockToggleButton.addEventListener('click', function () {
-      const isOpen = dockToggleButton.getAttribute('aria-pressed') === 'true';
-      setSearchMode(!isOpen);
-    });
-  }
-
-  let ticking = false;
-  function onScrollish() {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(function () {
-      updateCurrentDate();
-      ticking = false;
-    });
-  }
-
-  window.addEventListener('scroll', onScrollish, { passive: true });
-  window.addEventListener('resize', onScrollish);
-  if (timeline) timeline.addEventListener('scroll', onScrollish, { passive: true });
-
-  setSearchMode(false);
-  if (!gate || gate.style.display === 'none') { applyVisibility(); }
-  else { updateSearchCount(); }
-  setTimeout(updateCurrentDate, 50);
+  window.addEventListener('scroll', updateScrollDate, { passive: true });
+  window.addEventListener('resize', updateScrollDate);
+  applyVisibility();
 })();
 </script>
-</body>
+<script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
+  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
+  // across multiple labels.
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  // Trust decision: when the sender is same-origin-visible (event.origin is a
+  // real origin like https://www.perplexity.ai) we trust event.origin directly.
+  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
+  // broker's stamped `parentOrigin` to identify the top window. The fallback
+  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
+  // on the response path (see postToTrustedTop) to ensure replies can't be
+  // delivered to anyone but the actual top window of that claimed origin.
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  // All responses go to window.top with targetOrigin = the allowlisted origin.
+  // An attacker that iframes us inside their own null-origin broker can claim
+  // any parentOrigin they like, but the browser will drop the reply whenever
+  // the real top's origin doesn't match — so the screenshot never leaves.
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      // cssText on a computed style is the serialized declaration in modern
+      // Chromium/Safari — a single read beats enumerating ~400 longhand
+      // properties. Firefox returns "" here, so we fall back on empty.
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  // Cache resolved font URL -> data URI across captures. Fonts on a page
+  // essentially never change, and a batch run emits multiple captures back to
+  // back — without this we'd refetch + re-base64 every time.
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      // Wait for any pending web fonts to resolve so both inline metrics and
+      // the @font-face inlining below see the same loaded faces.
+      if (document.fonts && document.fonts.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (_error) {}
+      }
+
+      const clone = document.documentElement.cloneNode(true);
+      inlineAll(document.documentElement, clone);
+
+      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
+      for (let index = 0; index < removedNodes.length; index += 1) {
+        removedNodes[index].remove();
+      }
+
+      stripExternal(clone);
+
+      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
+      // can resolve them — external font URLs aren't fetched during
+      // foreignObject rendering, which would otherwise force a fallback face
+      // and change text metrics.
+      const inlinedFontCss = await buildInlinedFontCss();
+      if (inlinedFontCss) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = inlinedFontCss;
+        const head = clone.querySelector("head");
+        if (head) head.appendChild(styleEl);
+        else clone.insertBefore(styleEl, clone.firstChild);
+      }
+
+      const html = new XMLSerializer().serializeToString(clone);
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        '<foreignObject width="100%" height="100%">' +
+        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
+        `<div style="transform:translate(-${scrollX}px,-${scrollY}px);transform-origin:top left">` +
+        html +
+        "</div></div></foreignObject></svg>";
+      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        postResult(canvas.toDataURL("image/png"));
+      };
+      image.onerror = function () {
+        postResult(null);
+      };
+      image.src = svgUrl;
+    } catch (_error) {
+      postResult(null);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (!event.data) return;
+    // Only accept messages from the direct parent frame. Blocks sibling /
+    // unrelated-window postMessage senders that could otherwise reach us.
+    if (event.source !== window.parent) return;
+
+    const trustedParentOrigin = getTrustedParentOrigin(event);
+    if (!trustedParentOrigin) return;
+    trustedTopOrigin = trustedParentOrigin;
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
+      scrollForwarding = true;
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
+      scrollForwarding = false;
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = 0;
+      return;
+    }
+
+    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+
+    handleCaptureRequest(event);
+  });
+})();
+
+
+</script></body>
 </html>
